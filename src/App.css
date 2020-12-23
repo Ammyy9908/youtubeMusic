@@ -1,38 +1,451 @@
-.App {
-  text-align: center;
+
+.header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition:background-color .3s ease-in-out;
+  height: 65px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  opacity: 1;
+  backdrop-filter: blur(10px);
+  /* border-bottom: 1px solid rgb(97, 95, 95); */
+}
+.header__logo{
+  flex:.3;
+  margin-left: 5px;
+}
+.nav{
+  display:flex;
+  flex:.2;
+  justify-content: space-around;
+  list-style-type: none;
+}
+.nav > li > a{
+  font-size: 20px;
+  color: rgb(165, 160, 160);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color .5s ease-out;
+  padding:.5em;
+  display: flex;
+}
+/* .search__link{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  flex: 1;
+} */
+.nav > li > a:hover{
+  color: #fff;
+}
+.user__avatar{
+  flex: .3;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5px;
+}
+.mixed{
+  width: 90%;
+  display: flex;
+  background-color:transparent;
+  flex-direction: column;
+  margin: 65px auto;
+  padding: .5em;
+ 
+}
+*::-webkit-scrollbar{
+  width: 0px !important;
+}
+.mixed > h1{
+  font-size: 34px;
+  color: #fff;
+}
+.mixedCard{
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  background-color:transparent;
+  border-radius: 5px;
+  margin-left: 15px;
+}
+.mixedCard__top{
+  width: 100%;
+  height: 150px;
+  background-color:rgb(2, 228, 198);
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: flex-end;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-size: cover;
+}
+.mixedMoreIcon{
+  margin-right: 5px;
+  margin-top: 15px;
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mixedPlayControl{
+  margin-right: 15px;
+  transition: all .5s ease-in-out;
+  margin-bottom: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cardDetails{
+  display: flex;
+  flex-direction: column;
+  padding: .5em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cardDetails > .card__title{
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 19.2px;
+}
+.cardDetails > .card__subtitle{
+  font-size: 16px;
+  font-weight: 500;
+  color: #ccc;
+  line-height: 19.2px;
+}
+.mixed__cards{
+  display: flex;
+  max-width:100%;
+  overflow-x: auto;
+  justify-content:space-between;
+}
+.favourites{
+  width: 90%;
+  display: flex;
+  background-color:transparent;
+  flex-direction: column;
+  margin: 65px auto;
+  padding: .5em;
+}
+.favourites > h1{
+  font-size: 34px;
+  color: #fff;
+}
+.favourites__cards{
+  display: flex;
+  max-width:100%;
+  overflow-x: auto;
+  justify-content:flex-start;
+  align-items:center;
+}
+.favouriteCard{
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  background-color:transparent;
+  border-radius: 5px;
+  margin-left: 15px;
+  align-items: center;
+}
+.favouriteCard > img{
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+.favorite_details{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding:10px;
+  justify-content:space-evenly;
+  height: 65px;
+
+}
+.artistName{
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+.artist__likes{
+  color: #ccc;
+  font-size: 16px;
+}
+.similar{
+  width: 90%;
+  display: flex;
+  background-color:transparent;
+  flex-direction: column;
+  margin: 65px auto;
+  padding: .5em;
+ 
+}
+.similar > h1{
+  font-size: 34px;
+  color: #fff;
+}
+.similars{
+  display: flex;
+  max-width:100%;
+  overflow-x: auto;
+  justify-content:flex-start;
+}
+.similar__heading{
+  display: flex;
+  padding:.4em;
+  width: 250px;
+  justify-content:flex-start;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.headingText{
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+.headingText > .title{
+  color: rgb(165, 157, 157);
+  font-size: 22px;
+}
+.headingText > .subtitle{
+  color: #fff;
+  font-size: 22px;
+}
+.player{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  background-color: #262626;
+  height: 65px;
+  position:fixed;
+  bottom: 0;
+  color: #fff;
+  width: 100%;
+}
+.music__control{
+  width: 10%;
+  display: flex;
+  justify-content:space-evenly;
+}
+.music__info > img{
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+}
+.music__info{
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  width: 40%;
+}
+.playedSongInfo{
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  width:60%;
+}
+.musicInfo{
+  display: flex;
+  flex-direction: column;
+}
+.active{
+  color: #fff !important;
 }
 
-.App-link {
-  color: #61dafb;
+.emoji, .musicicon , .trendicon
+{
+  fill: #fff;
+  width: 25px;
+  height: 25px;
+  
+  
+}
+.tiles{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding:.5em;
+  margin:65px auto;
+  flex-wrap: wrap;
+}
+.explore{
+  width: 90%;
+  margin: 0 auto;
+}
+.exploreTiles{
+  display: flex;
+  width: 300px;
+  background-color: #464648b3;
+  justify-content:flex-start;
+  align-items: center;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.127);
+  margin-bottom: 10px;
+  transition: background-color .5s ease-in-out;
+  cursor: pointer;
+
+}
+.exploreTiles:hover{
+  background-color:#4646487b;
+}
+.exploreTiles > p{
+  margin-left: 15px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.exploreTiles > svg{
+  margin-left: 15px;
+  
+}
+.albums{
+
+  width:90%;
+  margin: 0 auto;
+}
+.albums  > .album__headings > a{
+font-size: 28px;
+color: #fff;
+font-weight: 900;
+font-family: "Helvetica Neue";
+text-decoration: none;
+}
+.album__headings > span{
+  font-size: 16px;
+  cursor: pointer;
+}
+.albums_tiles{
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+}
+
+.squareCard{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items:center;
+  margin-left: 10px;
+  
+}
+.album_cover{
+  height: 200px;
+  width: 200px;
+  background-color: #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items:flex-end;
+}
+.album_details{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+.album_details > a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.album_details > span{
+  color: #ccc;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.modesAndGenres{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 45px;
+  margin-bottom: 105px;
+}
+.modesHeadings > a{
+  font-size: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 15px;
+
+}
+.modesHeadings > span{
+  font-size: 16px;
+  color: #999;
+  text-decoration: none;
+  font-weight: normal;
+  cursor: pointer;
+
+}
+.modes{
+  width: 100%;
+  display:flex;
+  align-items: center;
+  margin-top:20px;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  
+}
+.modesTile{
+  min-width: 200px;
+  height: 45px;
+  background-color: rgba(77, 73, 73, 0.746);
+  border-radius: 5px;
+  border-left: 5px solid yellow;
+  display: flex;
+  justify-content:flex-start;
+  align-items:center;
+  box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.127);
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.modesTile > p{
+  margin-left: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+.modesTile:hover{
+  background-color:#4646487b;
+}
+.navbar__library{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 85px;
+  backdrop-filter: blur(10px);
+  background-color: #000;
+  align-items: center;
+}
+.navbar__library > .navLibrary{
+  display: flex;
+  justify-content:flex-start;
+  width: 85%;
+  margin: 0 auto;
+}
+.navbar__library > .navLibrary > li{
+  margin-right: 35px;
+}
+.navbar__library > .navLibrary > li > a{
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #999;
+  text-decoration: none;
+  padding-top:.5em;
+  padding-bottom:.5em;
+  font-weight: 600;
+  transition:all .3s ease-in-out;
+  display: flex;
+  justify-content:flex-start;
+}
+.navbar__library > .navLibrary > li > a:hover{
+  color: #fff;
+}
+.navbar__library > .navLibrary > li > .activeLink{
+  border-bottom: 2px solid #fff;
+  color: #fff;
+
 }
